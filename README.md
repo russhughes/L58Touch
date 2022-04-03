@@ -1,5 +1,7 @@
 # l58_touch.py - L58 Multi-Touch MicroPython Module
 
+Tested on LilyGo-EPD47 T5 E-Paper 4.7" running MicroPython v1.18
+
 ## Class L58Touch
 
 ### L58Touch(bus, address):
@@ -88,7 +90,6 @@ from machine import Pin, SoftI2C
 import l58_touch
 
 tp = l58_touch.L58Touch(SoftI2C(Pin(14), Pin(15)), 90)
-tp.wakeup()
 while True:
     for _ in range(tp.scan_point()):
         if touch_point := tp.get_point():
