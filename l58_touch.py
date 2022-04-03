@@ -24,8 +24,8 @@ class L58Touch():
         self.bus = bus
         self.address = address
         self.touch_data = []
-        self._clear_flags()
         self.wakeup()
+        self._clear_flags()
 
     def _cmd_read(self, write, nbytes):
         """
